@@ -35,6 +35,7 @@ public class MemberController {
 		
 		if (idCheck == 0) {
 			memberDao.joinDao(request.getParameter("mid"), request.getParameter("mpw"), request.getParameter("mname"), request.getParameter("memail"));
+			model.addAttribute("memberName",request.getParameter("mname"));
 			return "joinOk";
 		} else {
 			model.addAttribute("joinFail", "이미 가입된 아이디입니다. 다시 입력해주세요.");
